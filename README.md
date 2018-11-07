@@ -36,3 +36,6 @@ nurseId and doctorId as user names for nurses/doctors.
 
 ## Resources Used
 - None
+
+## Application Design
+![](https://github.com/kbmakevin/android-data-and-storage-api/blob/master/app_design.jpg)
