@@ -42,6 +42,33 @@ public class PatientListingActivity extends BaseNavigationActivity {
             }
         });
 
+        findViewById(R.id.patient_listing_viewbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //get as string first to check str length before converting to int
+                String selectedPatientId = ((TextView) findViewById(R.id.patient_id_edittext)).getText().toString();
+                //patient id field must be filled in
+                if (selectedPatientId.length() > 0) {
+
+                    //take id from patient field as new patient id
+                    //patient id must not already exist in db - need to check
+                    //select patient by id and see if returned result
+                    Patient patient = databaseManager.getPatientById(Integer.parseInt(selectedPatientId));
+                    //did not find matching patient with the given id
+                    if (patient != null) {
+                        startActivity(new Intent(view.getContext(), PatientViewActivity.class).putExtra("selectedPatientId", selectedPatientId));
+
+                    } else {
+                        Toast.makeText(view.getContext(), "Patient with the ID: " + selectedPatientId + " does not exist\nPlease enter a different ID if you want to view a patient's details.", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+                    Toast.makeText(view.getContext(), "Please fill in a patient Id!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         findViewById(R.id.patient_listing_addBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
