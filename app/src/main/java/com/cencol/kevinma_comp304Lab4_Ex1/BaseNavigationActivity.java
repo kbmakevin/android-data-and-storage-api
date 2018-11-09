@@ -44,7 +44,7 @@ public class BaseNavigationActivity extends AppCompatActivity {
                 break;
             case R.id.test_management:
                 Toast.makeText(this, R.string.menu_test_management, Toast.LENGTH_LONG).show();
-//                startActivity(new Intent(this, GrainFoodItemsActivity.class));
+                startActivity(new Intent(this, TestListingActivity.class));
                 break;
             case R.id.logout:
                 Toast.makeText(this, R.string.menu_logout, Toast.LENGTH_LONG).show();

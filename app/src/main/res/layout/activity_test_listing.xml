@@ -4,34 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cencol.kevinma_comp304Lab4_Ex1.PatientListingActivity">
+    tools:context="com.cencol.kevinma_comp304Lab4_Ex1.TestListingActivity">
 
     <EditText
-        android:id="@+id/patient_id_edittext"
+        android:id="@+id/test_id_edittext"
         android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/patient_listing_id_placeholder"
+        android:hint="@string/test_listing_id_placeholder"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/patient_listing_viewbtn"
+        android:id="@+id/test_listing_viewbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/patient_listing_view_btn"
-        app:layout_constraintEnd_toStartOf="@+id/patient_listing_addBtn"
+        app:layout_constraintEnd_toStartOf="@+id/test_listing_addBtn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/patient_id_edittext"
+        app:layout_constraintStart_toEndOf="@+id/test_id_edittext"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/patient_listing_addBtn"
+        android:id="@+id/test_listing_addBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -40,7 +40,7 @@
         android:text="@string/patient_listing_add_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/patient_listing_viewbtn"
+        app:layout_constraintStart_toEndOf="@+id/test_listing_viewbtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
@@ -51,5 +51,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_id_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/test_id_edittext" />
 </android.support.constraint.ConstraintLayout>

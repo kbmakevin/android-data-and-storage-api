@@ -47,18 +47,38 @@
     <string name="patient_details_label">Lab4 Ex1 M18 - Patient Details</string>
     <string name="patient_mutation_add_label">Lab4 Ex1 M18 - New Patient</string>
     <string name="patient_mutation_update_label">Lab4 Ex1 M18 - Update Patient Information</string>
+
     <string name="patient_listing_id_placeholder">Patient Id</string>
     <string name="patient_listing_view_btn">View</string>
     <string name="patient_listing_add_btn">Add</string>
+
     <string name="patient_id_label">Patient Id</string>
     <string name="patient_fname_label">First Name</string>
     <string name="patient_lname_label">Last Name</string>
     <string name="patient_dept_label">Department</string>
     <string name="patient_doctor_label">Doctor</string>
     <string name="patient_room_label">Room</string>
+
     <string name="patient_mutation_update_btn">Update</string>
     <string name="patient_mutation_add_btn">Add</string>
     <string name="patient_mutation_cancel_btn">Cancel</string>
 
+    <!--test management-->
+    <string name="test_listing_label">Lab4 Ex1 M18 - Test Listing</string>
+    <string name="test_details_label">Lab4 Ex1 M18 - Test Details</string>
+    <string name="test_mutation_add_label">Lab4 Ex1 M18 - New Test</string>
+    <string name="test_mutation_update_label">Lab4 Ex1 M18 - Update Test Information</string>
+
+    <string name="test_listing_id_placeholder">Test Id</string>
+
+    <string name="test_id_label">Test Id</string>
+    <string name="test_patient_label">Patient</string>
+    <string name="test_nurse_label">Nurse</string>
+    <string name="test_bpl_label">BPL</string>
+    <string name="test_bph_label">BPH</string>
+    <string name="test_temperature_label">Temperature</string>
+    <string name="test_height_label">Height</string>
+    <string name="test_weight_label">Weight</string>
+    <string name="test_bmi_label">BMI</string>
 
 </resources>

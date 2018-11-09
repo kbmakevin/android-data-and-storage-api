@@ -54,7 +54,7 @@ public class HomeActivity extends BaseNavigationActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), R.string.menu_test_management, Toast.LENGTH_LONG).show();
-                //TODO: ADD link to class
+                startActivity(new Intent(view.getContext(), TestListingActivity.class));
             }
         });
 

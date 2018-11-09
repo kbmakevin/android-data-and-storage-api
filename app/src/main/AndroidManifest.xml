@@ -37,6 +37,19 @@
         <activity
             android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientViewActivity"
             android:label="@string/patient_details_label" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.TestListingActivity"
+            android:label="@string/test_listing_label" />
+        <activity android:name="com.cencol.kevinma_comp304Lab4_Ex1.TestMutationActivity" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.TestViewActivity"
+            android:label="@string/test_details_label" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.TestAddActivity"
+            android:label="@string/test_mutation_add_label" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.TestEditActivity"
+            android:label="@string/test_mutation_update_label" />
     </application>
 
 </manifest>
