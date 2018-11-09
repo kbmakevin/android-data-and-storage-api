@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Lab4 M18 - Kevin Ma</string>
 
+    <!--database stuff-->
+    <string-array name="db_table_names">
+        <item>Nurse</item>
+        <item>Doctor</item>
+        <item>Patient</item>
+        <item>Test</item>
+    </string-array>
+
+    <string-array name="db_table_create_strings">
+        <item>"CREATE TABLE Nurse (nurseId integer primary key, firstName text, lastName text, department text, password text);"</item>
+        <item>"CREATE TABLE Doctor (doctorId integer primary key, firstName text, lastName text, department text, password text);"</item>
+        <item>"CREATE TABLE Patient (patientId integer primary key, firstName text, lastName text, department text, doctorId integer, room text);"</item>
+        <item>"CREATE TABLE Test (testId integer primary key, patientId integer, nurseId integer, systolicBPL integer, diastolicBPL integer, BPH integer, temperature real, height real, weight real, BMI real);"</item>
+    </string-array>
+
     <!--main/launcher activity-->
     <string name="main_menu_instructions">Select exercise to demonstrate: </string>
     <string name="ex1">Exercise 1</string>

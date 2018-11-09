@@ -62,7 +62,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void dbInitialize(String[] tableNames, String[] tableCreatorStrings) {
         this.tableNames = tableNames;
         this.tableCreatorStrings = tableCreatorStrings;
-
     }
 
     //
@@ -79,29 +78,48 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return nr > -1;
     }
 
-    // This method returns a task object which holds the table row with the given id
-    // The following argument should be passed:
-    // id - an Object which holds the primary key value
-    // fieldName - the  name of the primary key field
-//    public Student getStudentById(Object id, String fieldName) throws Exception{
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor =  db.rawQuery( "select * from " + tableName + " where "+ fieldName + "='"+String.valueOf(id)+"'", null );
-//        Student student = new Student(); //create a new Student object
-//        if (cursor.moveToFirst()) { //if row exists
-//            cursor.moveToFirst(); //move to first row
-//            //initialize the instance variables of task object
-//            student.setStudentId(cursor.getInt(0))    ;
-//            student.setStudentName(cursor.getString(1));
-//            student.setStudentEmail(cursor.getString(2));
-//            cursor.close();
-//
-//        } else {
-//            student = null;
-//        }
-//        db.close();
-//        return student;
-//
-//    }
+    public Nurse getNurseById(String tableName, Integer id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + tableName + " where nurseId='" + String.valueOf(id) + "'", null);
+        Nurse nurse = new Nurse(); //create a new Nurse object
+        if (cursor.moveToFirst()) { //if row exists, move to first row
+            //initialize the instance variables of task object
+            nurse.setNurseId(cursor.getInt(cursor.getColumnIndex("nurseId")));
+            nurse.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+            nurse.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+            nurse.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+            nurse.setPassword(cursor.getString(cursor.getColumnIndex("password")));
+
+            cursor.close();
+
+        } else {
+            nurse = null;
+        }
+        db.close();
+        return nurse;
+    }
+
+    public Doctor getDoctorById(String tableName, Integer id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + tableName + " where doctorId='" + String.valueOf(id) + "'", null);
+        Doctor doctor = new Doctor(); //create a new Doctor object
+        if (cursor.moveToFirst()) { //if row exists, move to first row
+            //initialize the instance variables of task object
+            doctor.setDoctorId(cursor.getInt(cursor.getColumnIndex("doctorId")));
+            doctor.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+            doctor.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+            doctor.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+            doctor.setPassword(cursor.getString(cursor.getColumnIndex("password")));
+
+            cursor.close();
+
+        } else {
+            doctor = null;
+        }
+        db.close();
+        return doctor;
+    }
+
     //
     //
     // The following argument should be passed:
