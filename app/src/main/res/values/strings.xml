@@ -32,6 +32,7 @@
     <string name="login_button">Login</string>
 
     <!--home menu-->
+    <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_patient_management">Patient Management</string>
     <string name="menu_test_management">Test Management</string>
@@ -40,5 +41,23 @@
     <!--home activity-->
     <string name="home_label">Lab4 Ex1 M18 - Home</string>
     <string name="home_logout">Logout</string>
+
+    <!--patient management-->
+    <string name="patient_listing_label">Lab4 Ex1 M18 - Patient Listing</string>
+    <string name="patient_mutation_add_label">Lab4 Ex1 M18 - New Patient</string>
+    <string name="patient_mutation_update_label">Lab4 Ex1 M18 - Update Patient Information</string>
+    <string name="patient_listing_id_placeholder">Patient Id</string>
+    <string name="patient_listing_view_btn">View</string>
+    <string name="patient_listing_add_btn">Add</string>
+    <string name="patient_id_label">Patient Id</string>
+    <string name="patient_fname_label">First Name</string>
+    <string name="patient_lname_label">Last Name</string>
+    <string name="patient_dept_label">Department</string>
+    <string name="patient_doctor_label">Doctor</string>
+    <string name="patient_room_label">Room</string>
+    <string name="patient_mutation_update_btn">Update</string>
+    <string name="patient_mutation_add_btn">Add</string>
+    <string name="patient_mutation_cancel_btn">Cancel</string>
+
 
 </resources>

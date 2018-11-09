@@ -22,9 +22,19 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name="com.cencol.kevinma_comp304Lab4_Ex1.HomeActivity"
-            android:label="@string/home_label"
-            android:parentActivityName="com.cencol.kevinma_comp304Lab4_Ex1.LoginActivity" />
-        <activity android:name="com.cencol.kevinma_comp304Lab4_Ex1.BaseNavigationActivity"></activity>
+            android:label="@string/home_label" />
+        <activity android:name="com.cencol.kevinma_comp304Lab4_Ex1.BaseNavigationActivity" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientListingActivity"
+            android:label="@string/patient_listing_label" />
+        <activity android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientMutationActivity" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientAddActivity"
+            android:label="@string/patient_mutation_add_label" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientEditActivity"
+            android:label="@string/patient_mutation_add_label" />
+
     </application>
 
 </manifest>

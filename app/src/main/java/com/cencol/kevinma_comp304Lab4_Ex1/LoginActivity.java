@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     //auth success/failure feedback for user
                     try {
-                        Nurse nurse = databaseManager.getNurseById("Nurse", Integer.parseInt(((TextView) findViewById(R.id.username_edittext)).getText().toString()));
+                        Nurse nurse = databaseManager.getNurseById(Integer.parseInt(((TextView) findViewById(R.id.username_edittext)).getText().toString()));
 
                         //found a nurse with matching id
                         if (nurse != null) {
@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         } else {
                             //if not a nurse, maybe a doctor
-                            Doctor doctor = databaseManager.getDoctorById("Doctor", Integer.parseInt(((TextView) findViewById(R.id.username_edittext)).getText().toString()));
+                            Doctor doctor = databaseManager.getDoctorById(Integer.parseInt(((TextView) findViewById(R.id.username_edittext)).getText().toString()));
 //found a nurse with matching id
                             if (doctor != null) {
 

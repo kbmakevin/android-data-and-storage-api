@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
 
 public class DatabaseManager extends SQLiteOpenHelper {
     //database name and version
@@ -28,6 +27,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
+        //comes here not on dbinit, but rather the first time programmatically select/insert into the db, is when the execution goes into this "onCreate" method
         for (String tableCreatorString : tableCreatorStrings) {
             //create the tables
             db.execSQL(tableCreatorString);
@@ -78,9 +78,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return nr > -1;
     }
 
-    public Nurse getNurseById(String tableName, Integer id) {
+    public Nurse getNurseById(Integer id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + tableName + " where nurseId='" + String.valueOf(id) + "'", null);
+        Cursor cursor = db.rawQuery("select * from Nurse where nurseId='" + String.valueOf(id) + "'", null);
         Nurse nurse = new Nurse(); //create a new Nurse object
         if (cursor.moveToFirst()) { //if row exists, move to first row
             //initialize the instance variables of task object
@@ -99,9 +99,9 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return nurse;
     }
 
-    public Doctor getDoctorById(String tableName, Integer id) {
+    public Doctor getDoctorById(Integer id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + tableName + " where doctorId='" + String.valueOf(id) + "'", null);
+        Cursor cursor = db.rawQuery("select * from Doctor where doctorId='" + String.valueOf(id) + "'", null);
         Doctor doctor = new Doctor(); //create a new Doctor object
         if (cursor.moveToFirst()) { //if row exists, move to first row
             //initialize the instance variables of task object
@@ -118,6 +118,95 @@ public class DatabaseManager extends SQLiteOpenHelper {
         }
         db.close();
         return doctor;
+    }
+
+    public Doctor[] getAllDoctors() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Doctor", null);
+        //array to contain all the Doctors stored in the database
+        Doctor[] doctors = new Doctor[cursor.getCount()];
+
+        //no need for further processing if there is no returned data
+        if (doctors.length > 0) {
+
+            Doctor doctor;
+
+            int counter = 0;
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                doctor = new Doctor(); //create a new Patient object
+                doctor.setDoctorId(cursor.getInt(cursor.getColumnIndex("doctorId")));
+                doctor.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+                doctor.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+                doctor.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+                doctor.setPassword(cursor.getString(cursor.getColumnIndex("password")));
+
+                doctors[counter++] = doctor;
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+
+        db.close();
+        return doctors;
+    }
+
+    public Patient getPatientById(Integer id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Patient where patientId='" + String.valueOf(id) + "'", null);
+        Patient patient = new Patient(); //create a new Patient object
+        if (cursor.moveToFirst()) { //if row exists, move to first row
+            //initialize the instance variables of task object
+            patient.setPatientId(cursor.getInt(cursor.getColumnIndex("patientId")));
+            patient.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+            patient.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+            patient.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+            patient.setDoctorId(cursor.getInt(cursor.getColumnIndex("doctorId")));
+            patient.setRoom(cursor.getString(cursor.getColumnIndex("room")));
+
+            cursor.close();
+
+        } else {
+            patient = null;
+        }
+        db.close();
+        return patient;
+    }
+
+    public Patient[] getAllPatients() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Patient", null);
+        //array to contain all the Patients stored in the database
+        Patient[] patients = new Patient[cursor.getCount()];
+
+        //no need for further processing if there is no returned data
+        if (patients.length > 0) {
+
+            Patient patient;
+
+            int counter = 0;
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                patient = new Patient(); //create a new Patient object
+                patient.setPatientId(cursor.getInt(cursor.getColumnIndex("patientId")));
+                patient.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+                patient.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+                patient.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+                patient.setDoctorId(cursor.getInt(cursor.getColumnIndex("doctorId")));
+                patient.setRoom(cursor.getString(cursor.getColumnIndex("room")));
+
+                patients[counter++] = patient;
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+
+        db.close();
+        return patients;
     }
 
     //

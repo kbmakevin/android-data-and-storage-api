@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -19,7 +20,6 @@ public class HomeActivity extends BaseNavigationActivity {
         setContentView(R.layout.activity_home);
 
         SharedPreferences shared_prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
-        String authUser = shared_prefs.getString("auth_username", null);
         String authRole = shared_prefs.getString("auth_role", null);
 
         //change view depending on logged in as nurse or doctor
@@ -31,6 +31,33 @@ public class HomeActivity extends BaseNavigationActivity {
             imageButton.setImageResource(R.drawable.nurse_profile);
         }
 
+        //profile button
+        findViewById(R.id.profile_imagebtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), R.string.menu_profile, Toast.LENGTH_LONG).show();
+                //TODO: ADD link to class
+            }
+        });
+
+        //patient info btn
+        findViewById(R.id.patient_imagebtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), R.string.menu_patient_management, Toast.LENGTH_LONG).show();
+                startActivity(new Intent(view.getContext(), PatientListingActivity.class));
+            }
+        });
+
+        //medical tests btn
+        findViewById(R.id.test_imagebtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), R.string.menu_test_management, Toast.LENGTH_LONG).show();
+                //TODO: ADD link to class
+            }
+        });
+
         //logout button
         findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,5 +66,13 @@ public class HomeActivity extends BaseNavigationActivity {
                 startActivity(new Intent(view.getContext(), LoginActivity.class));
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        //disable the current active menu item to prevent end user confusion
+        menu.getItem(0).setEnabled(false);
+        return true;
     }
 }

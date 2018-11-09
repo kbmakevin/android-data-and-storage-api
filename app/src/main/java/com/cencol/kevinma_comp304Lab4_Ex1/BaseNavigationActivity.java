@@ -30,13 +30,17 @@ public class BaseNavigationActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
+            case R.id.home_menu:
+                Toast.makeText(this, R.string.menu_home, Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this, HomeActivity.class));
+                break;
             case R.id.profile:
                 Toast.makeText(this, R.string.menu_profile, Toast.LENGTH_LONG).show();
 //                startActivity(new Intent(this, VegFoodItemsActivity.class));
                 break;
             case R.id.patient_management:
                 Toast.makeText(this, R.string.menu_patient_management, Toast.LENGTH_LONG).show();
-//                startActivity(new Intent(this, FruitFoodItemsActivity.class));
+                startActivity(new Intent(this, PatientListingActivity.class));
                 break;
             case R.id.test_management:
                 Toast.makeText(this, R.string.menu_test_management, Toast.LENGTH_LONG).show();

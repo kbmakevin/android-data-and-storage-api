@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             lastName = "Brownie";
             department = "Gynaecology";
             password = "d";
-            //initialize ContentValues object with the new nurse
+            //initialize ContentValues object with the new doctor
             contentValues = new ContentValues();
             contentValues.put("doctorId", doctorId);
             contentValues.put("firstName", firstName);

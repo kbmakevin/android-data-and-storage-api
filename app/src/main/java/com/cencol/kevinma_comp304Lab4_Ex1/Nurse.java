@@ -72,12 +72,6 @@ public class Nurse {
 
     @Override
     public String toString() {
-        return "Nurse{" +
-                "nurseId=" + nurseId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", department='" + department + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "Nurse " + firstName + " " + lastName;
     }
 }
