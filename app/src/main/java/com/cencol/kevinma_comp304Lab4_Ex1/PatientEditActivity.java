@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -42,8 +43,8 @@ public class PatientEditActivity extends PatientMutationActivity {
                 contentValues.put("doctorId", doctorId);
                 contentValues.put("room", room);
                 try {
-                    databaseManager.addRow("Patient", contentValues);
-                    Toast.makeText(view.getContext(), "Added Patient: " + firstName + " " + lastName, Toast.LENGTH_SHORT).show();
+                    databaseManager.editRow("Patient",patientId,"patientId",contentValues);
+                    Toast.makeText(view.getContext(), "Updated Patient: " + firstName + " " + lastName, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(view.getContext(), PatientListingActivity.class));
                 } catch (Exception exception) {
                     //
@@ -52,5 +53,18 @@ public class PatientEditActivity extends PatientMutationActivity {
                 }
             }
         });
+
+
+        //populate fields for display
+        Patient selPatient = databaseManager.getPatientById(patientId);
+        ((TextView) findViewById(R.id.patient_mutation_fname_editTxt)).setText(selPatient.getFirstName());
+        ((TextView) findViewById(R.id.patient_mutation_lname_editTxt)).setText(selPatient.getLastName());
+        ((TextView) findViewById(R.id.patient_mutation_dept_editTxt)).setText(selPatient.getDepartment());
+
+        Doctor doctor = databaseManager.getDoctorById(selPatient.getDoctorId());
+        Spinner docSpinner = findViewById(R.id.patient_mutation_doctor_spinner);
+        docSpinner.setSelection(((ArrayAdapter) docSpinner.getAdapter()).getPosition(doctor));
+
+        ((TextView) findViewById(R.id.patient_mutation_room_editTxt)).setText(selPatient.getRoom());
     }
 }
