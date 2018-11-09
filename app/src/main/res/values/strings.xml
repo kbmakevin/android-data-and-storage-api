@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">kevinma_COMP304Lab4</string>
+    <string name="app_name">Lab4 M18 - Kevin Ma</string>
+
+    <!--main/launcher activity-->
+    <string name="main_menu_instructions">Select exercise to demonstrate: </string>
+    <string name="ex1">Exercise 1</string>
+    <string-array name="main_menu_exercise_list">
+        <item>@string/ex1</item>
+    </string-array>
+    <string name="main_menu_clicked_msg">"Clicked on "</string>
+
+    <!--login activity-->
+    <string name="login_label">Lab4 Ex1 M18 - Login</string>
+    <string name="login_header">Login</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_button">Login</string>
+
+    <!--home menu-->
+    <string name="menu_profile">Profile</string>
+    <string name="menu_patient_management">Patient Management</string>
+    <string name="menu_test_management">Test Management</string>
+    <string name="menu_logout">Logout</string>
+
+    <!--home activity-->
+    <string name="home_label">Lab4 Ex1 M18 - Home</string>
+    <string name="home_logout">Logout</string>
+
 </resources>

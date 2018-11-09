@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/menu_profile" />
+    <item
+        android:id="@+id/patient_management"
+        android:title="@string/menu_patient_management" />
+    <item
+        android:id="@+id/test_management"
+        android:title="@string/menu_test_management" />
+    <item
+        android:id="@+id/logout"
+        android:title="@string/menu_logout" />
+</menu>

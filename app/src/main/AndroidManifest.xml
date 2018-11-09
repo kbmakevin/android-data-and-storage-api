@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.LoginActivity"
+            android:label="@string/login_label"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.HomeActivity"
+            android:label="@string/home_label"
+            android:parentActivityName="com.cencol.kevinma_comp304Lab4_Ex1.LoginActivity" />
+        <activity android:name="com.cencol.kevinma_comp304Lab4_Ex1.BaseNavigationActivity"></activity>
     </application>
 
 </manifest>
