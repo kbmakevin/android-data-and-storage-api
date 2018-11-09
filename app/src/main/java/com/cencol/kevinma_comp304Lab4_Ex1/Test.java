@@ -120,4 +120,9 @@ public class Test {
     public void setBMI(double BMI) {
         this.BMI = BMI;
     }
+
+    @Override
+    public String toString() {
+        return "(Test ID = " + testId + ")" + " for (Patient ID = " + patientId + ")";
+    }
 }

@@ -11,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label10"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_bph_val" />
 
@@ -23,7 +24,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label7"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_temp_val" />
 
@@ -34,7 +35,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label8"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_height_val" />
 
@@ -45,19 +46,9 @@
         android:layout_marginStart="96dp"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label9"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_weight_val" />
-
-    <EditText
-        android:id="@+id/test_mutation_bph_val"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label6"
-        app:layout_constraintTop_toBottomOf="@+id/test_mutation_bpl_val" />
 
     <Spinner
         android:id="@+id/test_mutation_nurse_spinner"
@@ -88,28 +79,39 @@
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label2"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/slash_textview"
+        android:layout_width="14dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="172dp"
+        android:text="/"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/test_mutation_sysbpl_val"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/patient_mutation_action_btn2"
+        android:id="@+id/test_mutation_action_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Button"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/patient_mutation_cancel_btn2"
+        app:layout_constraintEnd_toStartOf="@+id/test_mutation_cancel_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label9" />
 
     <Button
-        android:id="@+id/patient_mutation_cancel_btn2"
+        android:id="@+id/test_mutation_cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/patient_mutation_cancel_btn"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/patient_mutation_action_btn2"
+        app:layout_constraintStart_toEndOf="@+id/test_mutation_action_btn"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_bmi_val" />
 
     <TextView
@@ -157,17 +159,6 @@
         app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label4" />
 
     <TextView
-        android:id="@+id/patient_mutation_id_label6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/test_bph_label"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label5" />
-
-    <TextView
         android:id="@+id/patient_mutation_id_label7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -205,20 +196,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/test_temperature_label"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label6" />
+        app:layout_constraintTop_toBottomOf="@+id/test_mutation_bph_val" />
 
     <EditText
-        android:id="@+id/test_mutation_bpl_val"
-        android:layout_width="wrap_content"
+        android:id="@+id/test_mutation_sysbpl_val"
+        android:layout_width="72dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label5"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_nurse_spinner" />
+
+    <EditText
+        android:id="@+id/test_mutation_diabpl_val"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="160dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/slash_textview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/test_mutation_bph_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/test_bph_label"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label5" />
 </android.support.constraint.ConstraintLayout>

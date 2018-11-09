@@ -75,7 +75,7 @@
     <string name="test_patient_label">Patient</string>
     <string name="test_nurse_label">Nurse</string>
     <string name="test_bpl_label">BPL</string>
-    <string name="test_bph_label">BPH</string>
+    <string name="test_bph_label">Benign Prostatic Hyperplasia</string>
     <string name="test_temperature_label">Temperature</string>
     <string name="test_height_label">Height</string>
     <string name="test_weight_label">Weight</string>

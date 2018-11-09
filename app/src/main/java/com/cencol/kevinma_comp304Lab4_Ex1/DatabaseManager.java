@@ -99,6 +99,39 @@ public class DatabaseManager extends SQLiteOpenHelper {
         return nurse;
     }
 
+    public Nurse[] getAllNurses() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Nurse", null);
+        //array to contain all the Nurses stored in the database
+        Nurse[] nurses = new Nurse[cursor.getCount()];
+
+        //no need for further processing if there is no returned data
+        if (nurses.length > 0) {
+
+            Nurse nurse;
+
+            int counter = 0;
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                nurse = new Nurse(); //create a new Patient object
+                nurse.setNurseId(cursor.getInt(cursor.getColumnIndex("nurseId")));
+                nurse.setFirstName(cursor.getString(cursor.getColumnIndex("firstName")));
+                nurse.setLastName(cursor.getString(cursor.getColumnIndex("lastName")));
+                nurse.setDepartment(cursor.getString(cursor.getColumnIndex("department")));
+                nurse.setPassword(cursor.getString(cursor.getColumnIndex("password")));
+
+                nurses[counter++] = nurse;
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+
+        db.close();
+        return nurses;
+    }
+
     public Doctor getDoctorById(Integer id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from Doctor where doctorId='" + String.valueOf(id) + "'", null);
@@ -207,6 +240,70 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         db.close();
         return patients;
+    }
+
+    public Test getTestById(Integer id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Test where testId='" + String.valueOf(id) + "'", null);
+        Test test = new Test(); //create a new Test object
+        if (cursor.moveToFirst()) { //if row exists, move to first row
+            //initialize the instance variables of task object
+            test.setTestId(cursor.getInt(cursor.getColumnIndex("testId")));
+            test.setPatientId(cursor.getInt(cursor.getColumnIndex("patientId")));
+            test.setNurseId(cursor.getInt(cursor.getColumnIndex("nurseId")));
+            test.setSystolicBPL(cursor.getInt(cursor.getColumnIndex("systolicBPL")));
+            test.setDiastolicBPL(cursor.getInt(cursor.getColumnIndex("diastolicBPL")));
+            test.setBPH(cursor.getInt(cursor.getColumnIndex("BPH")) == 1 ? true : false);
+            test.setTemperature(cursor.getDouble(cursor.getColumnIndex("temperature")));
+            test.setHeight(cursor.getDouble(cursor.getColumnIndex("height")));
+            test.setWeight(cursor.getDouble(cursor.getColumnIndex("weight")));
+            test.setBMI(cursor.getDouble(cursor.getColumnIndex("BMI")));
+
+            cursor.close();
+
+        } else {
+            test = null;
+        }
+        db.close();
+        return test;
+    }
+
+    public Test[] getAllTests() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select * from Test", null);
+        //array to contain all the Tests stored in the database
+        Test[] tests = new Test[cursor.getCount()];
+
+        //no need for further processing if there is no returned data
+        if (tests.length > 0) {
+
+            Test test;
+
+            int counter = 0;
+
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                test = new Test(); //create a new Patient object
+                test.setTestId(cursor.getInt(cursor.getColumnIndex("testId")));
+                test.setPatientId(cursor.getInt(cursor.getColumnIndex("patientId")));
+                test.setNurseId(cursor.getInt(cursor.getColumnIndex("nurseId")));
+                test.setSystolicBPL(cursor.getInt(cursor.getColumnIndex("systolicBPL")));
+                test.setDiastolicBPL(cursor.getInt(cursor.getColumnIndex("diastolicBPL")));
+                test.setBPH(cursor.getInt(cursor.getColumnIndex("BPH")) == 1 ? true : false);
+                test.setTemperature(cursor.getDouble(cursor.getColumnIndex("temperature")));
+                test.setHeight(cursor.getDouble(cursor.getColumnIndex("height")));
+                test.setWeight(cursor.getDouble(cursor.getColumnIndex("weight")));
+                test.setBMI(cursor.getDouble(cursor.getColumnIndex("BMI")));
+
+                tests[counter++] = test;
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+
+        db.close();
+        return tests;
     }
 
     //
