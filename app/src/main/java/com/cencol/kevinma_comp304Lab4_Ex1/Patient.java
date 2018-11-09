@@ -74,6 +74,6 @@ public class Patient {
 
     @Override
     public String toString() {
-        return firstName + " " + lastName + "Patient ID = " + patientId;
+        return firstName + " " + lastName + " (Patient ID = " + patientId + ")";
     }
 }

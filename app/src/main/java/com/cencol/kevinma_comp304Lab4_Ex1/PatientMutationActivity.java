@@ -29,7 +29,7 @@ public class PatientMutationActivity extends BaseNavigationActivity {
 
         //both add/edit get patient id passed in from previous activity
         Intent intent = getIntent();
-        patientId = Integer.parseInt(intent.getStringExtra("newPatientId"));
+        patientId = Integer.parseInt(intent.getStringExtra("patientId"));
 
         //get and fill in patientid from previous activity
         TextView editText = findViewById(R.id.patient_mutation_id_value);

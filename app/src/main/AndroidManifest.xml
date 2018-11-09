@@ -33,8 +33,10 @@
             android:label="@string/patient_mutation_add_label" />
         <activity
             android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientEditActivity"
-            android:label="@string/patient_mutation_add_label" />
-
+            android:label="@string/patient_mutation_update_label" />
+        <activity
+            android:name="com.cencol.kevinma_comp304Lab4_Ex1.PatientViewActivity"
+            android:label="@string/patient_details_label" />
     </application>
 
 </manifest>

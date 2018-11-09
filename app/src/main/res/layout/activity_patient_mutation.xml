@@ -7,7 +7,7 @@
     tools:context="com.cencol.kevinma_comp304Lab4_Ex1.PatientMutationActivity">
 
     <EditText
-        android:id="@+id/patient_mutation_fname_editTxt5"
+        android:id="@+id/patient_mutation_room_editTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
@@ -151,7 +151,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_action_btn"
-        app:layout_constraintTop_toBottomOf="@+id/patient_mutation_fname_editTxt5" />
+        app:layout_constraintTop_toBottomOf="@+id/patient_mutation_room_editTxt" />
 
     <Spinner
         android:id="@+id/patient_mutation_doctor_spinner"

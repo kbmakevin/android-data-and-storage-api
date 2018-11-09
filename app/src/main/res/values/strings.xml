@@ -44,6 +44,7 @@
 
     <!--patient management-->
     <string name="patient_listing_label">Lab4 Ex1 M18 - Patient Listing</string>
+    <string name="patient_details_label">Lab4 Ex1 M18 - Patient Details</string>
     <string name="patient_mutation_add_label">Lab4 Ex1 M18 - New Patient</string>
     <string name="patient_mutation_update_label">Lab4 Ex1 M18 - Update Patient Information</string>
     <string name="patient_listing_id_placeholder">Patient Id</string>

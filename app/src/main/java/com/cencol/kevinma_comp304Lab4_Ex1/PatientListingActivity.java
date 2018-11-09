@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +31,17 @@ public class PatientListingActivity extends BaseNavigationActivity {
         }
 
         //attach event handlers
+        final ListView patientListingListView = findViewById(R.id.patient_listing_listview);
+        patientListingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Patient patientSelected = (Patient) patientListingListView.getItemAtPosition(position);
+                int selectedPatientId = patientSelected.getPatientId();
+                startActivity(new Intent(view.getContext(), PatientViewActivity.class).putExtra("selectedPatientId", selectedPatientId + ""));
+            }
+        });
+
         findViewById(R.id.patient_listing_addBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +56,7 @@ public class PatientListingActivity extends BaseNavigationActivity {
                     Patient patient = databaseManager.getPatientById(Integer.parseInt(newPatientId));
                     //did not find matching patient with the given id
                     if (patient == null) {
-                        startActivity(new Intent(view.getContext(), PatientAddActivity.class).putExtra("newPatientId", newPatientId));
+                        startActivity(new Intent(view.getContext(), PatientAddActivity.class).putExtra("patientId", newPatientId));
 
                     } else {
                         Toast.makeText(view.getContext(), "Patient with the ID: " + newPatientId + " already exists!\nPlease enter a different ID if you want to add a new patient.", Toast.LENGTH_SHORT).show();
