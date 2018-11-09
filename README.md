@@ -35,7 +35,10 @@ nurseId and doctorId as user names for nurses/doctors.
 | **Total** | **100%** |
 
 ## Resources Used
-- None
+- [Test avatar](https://www.mobilityprojectpt.com/wp-content/uploads/2018/03/Health-Screen-Icon-300x300.png)
+- [Patient avatar](http://www.ambsw.com/wp-content/uploads/2015/09/avatar-patient-300x300.png)
+- [Nurse avatar](http://www.ambsw.com/wp-content/uploads/2015/09/avatar-nurse-300x300.png)
+- [Doctor avatar](https://cdn1.iconfinder.com/data/icons/avatar-flat-1/512/4-512.png)
 
 ## Application Design
 ![](https://github.com/kbmakevin/android-data-and-storage-api/blob/master/app_design.jpg)

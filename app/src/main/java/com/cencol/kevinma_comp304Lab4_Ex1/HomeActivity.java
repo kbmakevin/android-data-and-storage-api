@@ -1,8 +1,11 @@
 package com.cencol.kevinma_comp304Lab4_Ex1;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.cencol.kevinma_comp304lab4.R;
@@ -15,11 +18,18 @@ public class HomeActivity extends BaseNavigationActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-//        TextView textView = findViewById(R.id.test_textview);
-//
-//        SharedPreferences shared_prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
-//
-//        textView.setText(shared_prefs.getString("auth_username", null));
+        SharedPreferences shared_prefs = getSharedPreferences("app_prefs", Context.MODE_PRIVATE);
+        String authUser = shared_prefs.getString("auth_username", null);
+        String authRole = shared_prefs.getString("auth_role", null);
+
+        //change view depending on logged in as nurse or doctor
+        ImageButton imageButton = findViewById(R.id.profile_imagebtn);
+
+        if (authRole.equals("Doctor")) {
+            imageButton.setImageResource(R.drawable.doctor_profile);
+        } else {
+            imageButton.setImageResource(R.drawable.nurse_profile);
+        }
 
         //logout button
         findViewById(R.id.logout_btn).setOnClickListener(new View.OnClickListener() {
