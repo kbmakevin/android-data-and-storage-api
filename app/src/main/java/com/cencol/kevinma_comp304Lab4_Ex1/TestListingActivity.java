@@ -28,7 +28,6 @@ public class TestListingActivity extends BaseNavigationActivity {
 
 //populate listview with any existing patients
         Test[] existingTests = databaseManager.getAllTests();
-        Toast.makeText(this, "# of tests: " + existingTests.length, Toast.LENGTH_SHORT).show();
         if (existingTests.length > 0) {
             ListView listView = findViewById(R.id.test_listing_listview);
             listView.setAdapter(new ArrayAdapter<Test>(this, android.R.layout.simple_list_item_1, existingTests));

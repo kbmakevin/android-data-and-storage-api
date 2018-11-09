@@ -66,10 +66,10 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/patient_mutation_id_label3"
-        app:layout_constraintTop_toBottomOf="@+id/test_mutation_id_val" />
+        app:layout_constraintTop_toBottomOf="@+id/test_view_id_val" />
 
     <TextView
-        android:id="@+id/test_mutation_id_val"
+        android:id="@+id/test_view_id_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -91,27 +91,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/test_mutation_action_btn"
+        android:id="@+id/test_mut_action_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Button"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/test_mutation_cancel_btn"
+        app:layout_constraintEnd_toStartOf="@+id/test_mut_cancel_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/patient_mutation_id_label9" />
 
     <Button
-        android:id="@+id/test_mutation_cancel_btn"
+        android:id="@+id/test_mut_cancel_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/patient_mutation_cancel_btn"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/test_mutation_action_btn"
+        app:layout_constraintStart_toEndOf="@+id/test_mut_action_btn"
         app:layout_constraintTop_toBottomOf="@+id/test_mutation_bmi_val" />
 
     <TextView

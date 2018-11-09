@@ -1,7 +1,6 @@
 package com.cencol.kevinma_comp304Lab4_Ex1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -36,7 +35,7 @@ public class TestMutationActivity extends BaseNavigationActivity {
         testId = Integer.parseInt(intent.getStringExtra("testId"));
 
         //get and fill in testId from previous activity
-        TextView editText = findViewById(R.id.test_mutation_id_val);
+        TextView editText = findViewById(R.id.test_view_id_val);
         editText.setText(testId + "");
 
         //populate the patient spinner with existing patient & nurse spinner with nurses
@@ -55,7 +54,7 @@ public class TestMutationActivity extends BaseNavigationActivity {
         }
 
         //both edit and add test forms should go back to test listing when "cancelled" transaction
-        findViewById(R.id.test_mutation_cancel_btn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.test_mut_cancel_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(view.getContext(), TestListingActivity.class));

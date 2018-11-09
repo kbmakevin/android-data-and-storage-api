@@ -19,7 +19,7 @@ public class TestAddActivity extends TestMutationActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Button addBtn = findViewById(R.id.test_mutation_action_btn);
+        Button addBtn = findViewById(R.id.test_mut_action_btn);
 
         //change button text
         addBtn.setText(R.string.patient_mutation_add_btn);
